@@ -1,0 +1,603 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+:root {
+    --white : #FFFFFF;
+    --Color-1 : #d3d3d3;
+    --Color-2 : #198754;
+    --Color-3 : #000000;
+    --Color-4 : #90ee90;
+    --Color-5 : #F0906A;
+    --Color-6 : #F6EACB;
+    --Color-7 : #A3CFBB;
+}
+
+@keyframes MarkedAniOff {
+    0% {
+        height: 24px;
+        width: 24px;
+    }
+    50% {
+        height: 16px;
+        width: 16px;   
+    }
+    100% {
+        height: 24px;
+        width: 24px;
+    }
+}
+
+@keyframes MarkedAniOn {
+    0% {
+        height: 24px;
+        width: 24px;
+    }
+    50% {
+        height: 16px;
+        width: 16px;   
+    }
+    100% {
+        height: 24px;
+        width: 24px;
+    }
+}
+
+@keyframes SelectAniOff {
+    0% {
+        transform: translate(0px, -5px) scale(1.12);
+    }
+    50% {
+        transform: translate(0px, -5px) scale(1);
+    }
+    100% {
+        transform: translate(0px, -5px) scale(1.12);
+    }
+}
+
+@keyframes SelectAniOn {
+    0% {
+        transform: translate(0px, -5px) scale(1.12);
+    }
+    50% {
+        transform: translate(0px, -5px) scale(1);
+    }
+    100% {
+        transform: translate(0px, -5px) scale(1.12);
+    }
+}
+
+.navbar {
+    height: 64px;
+    background-color: var(--white);
+    position: fixed;
+    top: 0px;
+    z-index: 5;
+}
+
+.navbar > div:nth-child(1) {
+    height: 100%;
+    width: 7.5rem;
+}
+
+.navbar > div:nth-child(1) > a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.125rem;
+    text-decoration: none;
+    color: var(--Color-1);
+}
+
+.navbar > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.navbar > ul li {
+    height: 100%;
+    width: auto;
+    font-size: 0.875rem;
+}
+
+.navbar > ul li:hover {
+    height: 100%;
+    width: auto;
+    color: var(--Color-2);
+}
+
+.navbar > ul li::after {
+    content: '';
+    height: 1.5px;
+    width: 0%;
+    display: block;
+    margin: auto;
+    background-color: var(--Color-2);
+    transition: 0.5s all ease;
+}
+
+.navbar > ul li:hover::after {
+    content: '';
+    height: 1.5px;
+    width: 100%;
+    display: block;
+    background-color: var(--Color-2);
+    transition: 0.5s all ease;
+}
+
+.navbar > ul li::before {
+    content: '';
+    height: 1.5px;
+    width: 0%;
+    display: block;
+    margin: auto;
+    background-color: var(--Color-2);
+    transition: 0.5s all ease;
+}
+
+.navbar > ul li:hover::before {
+    content: '';
+    height: 1.5px;
+    width: 100%;
+    display: block;
+    background-color: var(--Color-2);
+    transition: 0.5s all ease;
+}
+
+#hamburgerButton {
+    display: none;
+}
+
+.bi-list {
+    font-size: 20px;
+}
+
+.sidebar li {
+    list-style: none;
+    transition: 0.5s all ease;
+}
+
+.sidebar li:hover {
+    color: white;
+    background-color: var(--Color-2);
+}
+
+.sidebar + ul {
+    display: flex;
+    list-style: none;
+}
+
+.HeroSection {
+    height: 400px;
+    margin-top: 70px;
+}
+
+.S1card,
+.S2card,
+.S3card,
+.S4card,
+.S5card,
+.S6card,
+.S7card,
+.S8card {
+    height: auto;
+    width: 19.9375rem;
+}
+
+.S1,
+.S2,
+.S3,
+.S4,
+.S5,
+.S6,
+.S7,
+.S8 {
+    height: 318px;
+    overflow: hidden;
+}
+
+.S1 > img:nth-child(1),
+.S2 > img:nth-child(1),
+.S3 > img:nth-child(1),
+.S4 > img:nth-child(1),
+.S5 > img:nth-child(1),
+.S6 > img:nth-child(1),
+.S7 > img:nth-child(1),
+.S8 > img:nth-child(1) {
+    height: 100%;
+    width: 100%;
+}
+
+.S1 > img:nth-child(2),
+.S2 > img:nth-child(2),
+.S3 > img:nth-child(2),
+.S4 > img:nth-child(2),
+.S5 > img:nth-child(2),
+.S6 > img:nth-child(2),
+.S7 > img:nth-child(2),
+.S8 > img:nth-child(2) {
+    height: 100%;
+    width: 100%;
+    transform: translate(0px, -318px);
+}
+
+.S1 > img:nth-child(3),
+.S2 > img:nth-child(3),
+.S3 > img:nth-child(3),
+.S4 > img:nth-child(3),
+.S5 > img:nth-child(3),
+.S6 > img:nth-child(3),
+.S7 > img:nth-child(3),
+.S8 > img:nth-child(3) {
+    height: 100%;
+    width: 100%;
+    transform: translate(0px, -636px);
+}
+
+.BookmarkItemsS1,
+.BookmarkItemsS2,
+.BookmarkItemsS3,
+.BookmarkItemsS4,
+.BookmarkItemsS5,
+.BookmarkItemsS6,
+.BookmarkItemsS7,
+.BookmarkItemsS8 {
+    cursor: pointer;
+}
+
+.BookmarkS1,
+.BookmarkS2,
+.BookmarkS3,
+.BookmarkS4,
+.BookmarkS5,
+.BookmarkS6,
+.BookmarkS7,
+.BookmarkS8 {
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.BookmarkedS1,
+.BookmarkedS2,
+.BookmarkedS3,
+.BookmarkedS4,
+.BookmarkedS5,
+.BookmarkedS6,
+.BookmarkedS7,
+.BookmarkedS8 {
+    position: absolute;
+    opacity: 1;
+    transition: 0.5s all ease;
+}
+
+.ColorOptionsS1Close,
+.ColorOptionsS2Close,
+.ColorOptionsS3Close,
+.ColorOptionsS4Close,
+.ColorOptionsS5Close,
+.ColorOptionsS6Close,
+.ColorOptionsS7Close,
+.ColorOptionsS8Close {
+    height: 29px;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.5s all ease;
+}
+
+.ColorOptionsS1Close > div
+.ColorOptionsS2Close > div,
+.ColorOptionsS3Close > div,
+.ColorOptionsS4Close > div,
+.ColorOptionsS5Close > div,
+.ColorOptionsS6Close > div,
+.ColorOptionsS7Close > div,
+.ColorOptionsS8Close > div {
+    height: 29px;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.5s all ease;
+}
+
+.ColorOptionsS1Open,
+.ColorOptionsS2Open,
+.ColorOptionsS3Open,
+.ColorOptionsS4Open,
+.ColorOptionsS5Open,
+.ColorOptionsS6Open,
+.ColorOptionsS7Open,
+.ColorOptionsS8Open {
+    height: 122.6px;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.5s all ease;
+}
+
+.ColorOptionsS1Open > div,
+.ColorOptionsS2Open > div,
+.ColorOptionsS3Open > div,
+.ColorOptionsS4Open > div,
+.ColorOptionsS5Open > div,
+.ColorOptionsS6Open > div,
+.ColorOptionsS7Open > div,
+.ColorOptionsS8Open > div {
+    height: 122.6px;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.5s all ease;
+}
+
+.ColorDropDownArrowS1Close,
+.ColorDropDownArrowS2Close,
+.ColorDropDownArrowS3Close,
+.ColorDropDownArrowS4Close,
+.ColorDropDownArrowS5Close,
+.ColorDropDownArrowS6Close,
+.ColorDropDownArrowS7Close,
+.ColorDropDownArrowS8Close {
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: 0.5s all ease;
+}
+
+.ColorDropDownArrowS1Open,
+.ColorDropDownArrowS2Open,
+.ColorDropDownArrowS3Open,
+.ColorDropDownArrowS4Open,
+.ColorDropDownArrowS5Open,
+.ColorDropDownArrowS6Open,
+.ColorDropDownArrowS7Open,
+.ColorDropDownArrowS8Open {
+    transform: rotate(-180deg);
+    transition: 0.5s all ease;
+}
+
+.ColorSelectionIndicatorS1 > div,
+.ColorSelectionIndicatorS2 > div,
+.ColorSelectionIndicatorS3 > div,
+.ColorSelectionIndicatorS4 > div,
+.ColorSelectionIndicatorS5 > div,
+.ColorSelectionIndicatorS6 > div,
+.ColorSelectionIndicatorS7 > div,
+.ColorSelectionIndicatorS8 > div {
+    height: 2.5px;
+    width: 75px;
+}
+
+.SizeOptionS1Close,
+.SizeOptionS2Close,
+.SizeOptionS3Close,
+.SizeOptionS4Close,
+.SizeOptionS5Close,
+.SizeOptionS6Close,
+.SizeOptionS7Close,
+.SizeOptionS8Close {
+    height: 29px;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.5s all ease;
+}
+
+.SizeOptionS1Close > div,
+.SizeOptionS2Close > div,
+.SizeOptionS3Close > div,
+.SizeOptionS4Close > div,
+.SizeOptionS5Close > div,
+.SizeOptionS6Close > div,
+.SizeOptionS7Close > div,
+.SizeOptionS8Close > div  {
+    height: 29px;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.5s all ease;
+}
+
+.SizeOptionS1Open,
+.SizeOptionS2Open,
+.SizeOptionS3Open,
+.SizeOptionS4Open,
+.SizeOptionS5Open,
+.SizeOptionS6Open,
+.SizeOptionS7Open,
+.SizeOptionS8Open {
+    height: 211px;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.5s all ease;
+}
+
+.SizeOptionS1Open > div,
+.SizeOptionS2Open > div,
+.SizeOptionS3Open > div,
+.SizeOptionS4Open > div,
+.SizeOptionS5Open > div,
+.SizeOptionS6Open > div,
+.SizeOptionS7Open > div,
+.SizeOptionS8Open > div {
+    height: 211px;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.5s all ease;
+}
+
+.SizeDropDownArrowS1Close,
+.SizeDropDownArrowS2Close,
+.SizeDropDownArrowS3Close,
+.SizeDropDownArrowS4Close,
+.SizeDropDownArrowS5Close,
+.SizeDropDownArrowS6Close,
+.SizeDropDownArrowS7Close,
+.SizeDropDownArrowS8Close {
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: 0.5s all ease;
+}
+
+.SizeDropDownArrowS1Open,
+.SizeDropDownArrowS2Open,
+.SizeDropDownArrowS3Open,
+.SizeDropDownArrowS4Open,
+.SizeDropDownArrowS5Open,
+.SizeDropDownArrowS6Open,
+.SizeDropDownArrowS7Open,
+.SizeDropDownArrowS8Open {
+    transform: rotate(-180deg);
+    transition: 0.5s all ease;
+}
+
+.SizeOptionS1Close > div > div:nth-child(2) > div > div:nth-child(1) div,
+.SizeOptionS2Close > div > div:nth-child(2) > div > div:nth-child(1) div,
+.SizeOptionS3Close > div > div:nth-child(2) > div > div:nth-child(1) div,
+.SizeOptionS4Close > div > div:nth-child(2) > div > div:nth-child(1) div,
+.SizeOptionS5Close > div > div:nth-child(2) > div > div:nth-child(1) div,
+.SizeOptionS6Close > div > div:nth-child(2) > div > div:nth-child(1) div,
+.SizeOptionS7Close > div > div:nth-child(2) > div > div:nth-child(1) div,
+.SizeOptionS8Close > div > div:nth-child(2) > div > div:nth-child(1) div { 
+    height: 75px;
+    width: 75px;
+    transform: translate(0px, 0px) scale(1);
+    transition: 0.5s all ease;
+}
+
+.SizeOptionS1Close > div > div:nth-child(2) > div > div:nth-child(1) div:hover,
+.SizeOptionS2Close > div > div:nth-child(2) > div > div:nth-child(1) div:hover,
+.SizeOptionS3Close > div > div:nth-child(2) > div > div:nth-child(1) div:hover,
+.SizeOptionS4Close > div > div:nth-child(2) > div > div:nth-child(1) div:hover,
+.SizeOptionS5Close > div > div:nth-child(2) > div > div:nth-child(1) div:hover,
+.SizeOptionS6Close > div > div:nth-child(2) > div > div:nth-child(1) div:hover,
+.SizeOptionS7Close > div > div:nth-child(2) > div > div:nth-child(1) div:hover,
+.SizeOptionS8Close > div > div:nth-child(2) > div > div:nth-child(1) div:hover {
+    cursor: pointer;
+    transform: translate(0px, -5px) scale(1.12);
+    transition: 0.5s all ease;
+}
+
+.SizeOptionS1Close > div > div:nth-child(2) > div > div:nth-child(2) div,
+.SizeOptionS2Close > div > div:nth-child(2) > div > div:nth-child(2) div,
+.SizeOptionS3Close > div > div:nth-child(2) > div > div:nth-child(2) div,
+.SizeOptionS4Close > div > div:nth-child(2) > div > div:nth-child(2) div,
+.SizeOptionS5Close > div > div:nth-child(2) > div > div:nth-child(2) div,
+.SizeOptionS6Close > div > div:nth-child(2) > div > div:nth-child(2) div,
+.SizeOptionS7Close > div > div:nth-child(2) > div > div:nth-child(2) div,
+.SizeOptionS8Close > div > div:nth-child(2) > div > div:nth-child(2) div {
+    height: 75px;
+    width: 75px;
+    transform: translate(0px, 0px) scale(1);
+    transition: 0.5s all ease;
+}
+
+.SizeOptionS1Close > div > div:nth-child(2) > div > div:nth-child(2) div:hover,
+.SizeOptionS2Close > div > div:nth-child(2) > div > div:nth-child(2) div:hover,
+.SizeOptionS3Close > div > div:nth-child(2) > div > div:nth-child(2) div:hover,
+.SizeOptionS4Close > div > div:nth-child(2) > div > div:nth-child(2) div:hover,
+.SizeOptionS5Close > div > div:nth-child(2) > div > div:nth-child(2) div:hover,
+.SizeOptionS6Close > div > div:nth-child(2) > div > div:nth-child(2) div:hover,
+.SizeOptionS7Close > div > div:nth-child(2) > div > div:nth-child(2) div:hover,
+.SizeOptionS8Close > div > div:nth-child(2) > div > div:nth-child(2) div:hover {
+    cursor: pointer;
+    transform: translate(0px, -5px) scale(1.12);
+    transition: 0.5s all ease;
+}
+
+footer > div > div:nth-child(1) > ul li,
+footer > div > div:nth-child(2) > ul li,
+footer > div > div:nth-child(3) > ul li {
+    height: 30px;
+    width: 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer > div > div:nth-child(1) > ul li > a,
+footer > div > div:nth-child(2) > ul li > a,
+footer > div > div:nth-child(3) > ul li > a {
+    color: var(--Color-2);
+    transform: scale(1);
+    transition: 0.22s all ease;
+}
+
+footer > div > div:nth-child(1) > ul li:hover > a,
+footer > div > div:nth-child(2) > ul li:hover > a,
+footer > div > div:nth-child(3) > ul li:hover > a {
+    color: var(--Color-2);
+    letter-spacing: 1.5px;
+    transform: scale(1.2);
+    transition: 0.22s all ease;
+}
+
+.MarkedAniOff {
+    animation: MarkedAniOff 0.32s ease 1;
+}
+
+.MarkedAniOn {
+    animation: MarkedAniOn 0.32s ease 1;
+}
+
+.DisplayOff {
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.DisplayOn {
+    opacity: 1;
+    transition: 0.5s all ease;
+}
+
+.Preferences {
+    height: 100%;
+    width: 0%;
+    opacity: 1;
+    transform: scale(1);
+    border-radius: 100%;
+    transition: 0.5s all ease;
+}
+
+.Preference {
+    width: 100%;
+    background-color: var(--Color-2);
+    opacity: 1;
+    transform: scale(1);
+    border-radius: 0%;
+    transition: 0.5s all ease;
+}
+
+.SelectAniOff {
+    animation: SelectAniOff 0.22s ease 1;
+}
+
+.SelectAniOn {
+    animation: SelectAniOn 0.22s ease 1;
+}
+
+.Configured {
+    color: var(--white);
+    background-color: var(--Color-2);
+    border: 1px solid var(--Color-2 ) !important;
+    transition: 0.5s all ease;
+}
+
+
+@media (max-width:533px) {
+    .navbar > ul {
+        display: none;
+    }
+}
+
+@media (max-width:533px) {
+    
+    #hamburgerButton {
+        display: inline-block;
+    }
+    
+}
+
+@media (max-width:425px) {
+    .HeroSection {
+        height: auto;
+    }  
+}
